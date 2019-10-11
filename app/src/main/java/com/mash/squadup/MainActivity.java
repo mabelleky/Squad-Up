@@ -1,52 +1,56 @@
 package com.mash.squadup;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+
+import com.mash.squadup.Screen.ScreenLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        LinearLayout view = (LinearLayout)findViewById(R.id.myLayout);
 
-       FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+        Toolbar toolBarOne = new Toolbar(this);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        Spinner spinner = new Spinner(this);
+        view.addView(toolBarOne);
+        toolBarOne.setBackgroundColor(Color.rgb(150, 0, 150));
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        ScreenLayout screenlayout = new ScreenLayout(this, view);
+        CalendarView cView = new CalendarView(this);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //screenlayout.AddButton("Settings", Color.RED);
+        //screenlayout.AddButton("Test Huehuehue");
+        view.addView(cView);
 
-        return super.onOptionsItemSelected(item);
+
+        /*
+        Spinner spinner = new Spinner(this);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Settings");
+        list.add("Main Menu");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        Toolbar toolBarOne = new Toolbar(this);
+        toolBarOne.addView(spinner);
+        toolBarOne.setBackgroundColor(Color.rgb(150, 150, 55));
+        setSupportActionBar(toolBarOne);
+        */
     }
 }
