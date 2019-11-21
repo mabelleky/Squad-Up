@@ -10,6 +10,15 @@
         android:id="@+id/myLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        app:layout_anchor="@+id/myLayout"
+        app:layout_anchorGravity="center">
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.mash.squadup.Screen.ToolbarFragment"
+            android:layout_width="match_parent"
+            android:layout_height="46dp" />
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
