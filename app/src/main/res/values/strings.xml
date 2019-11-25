@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SquadUp</string>
     <string name="action_settings">Settings</string>
+    <string name="calendar">Calendar</string>
+    <string name="map">Map</string>
+    <string name="meetup">Squad Up</string>
 </resources>
