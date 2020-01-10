@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         this.setSupportActionBar(toolbar);
 
 
+        // Create the button to enable the map fragment in the view
         Button mapButton = (Button)findViewById(R.id.mapNav);
         mapButton.setOnClickListener(new View.OnClickListener()
         {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Create the button to enable the calendar fragment in the view
         Button calButton = (Button)findViewById(R.id.calendarNav);
         calButton.setOnClickListener(new View.OnClickListener()
         {
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 transaction.commit(); // commit the changes
             }
         });
+
+        // Create the button to enable the meetup fragment in the view
         Button meetButton = (Button)findViewById(R.id.meetupNav);
         meetButton.setOnClickListener(new View.OnClickListener()
         {
